@@ -11,12 +11,19 @@ import { useDispatch } from 'react-redux';
 import { setLoading } from '../Redux/Loading';
 import { useNavigate } from 'react-router-dom';
 
+interface Box {
+    id: number;
+    Name: string;
+    Description: string;
+    BackgroundImage: number;
+    path: string;
+}
+
 function ContentBoxes() {
-
-
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [boxes, setBoxes] = useState([]);
+
+    const [boxes, setBoxes] = useState<Box[]>([]);
     const Base_Url = "http://localhost:3000/";
 
     const images = {
@@ -41,11 +48,10 @@ function ContentBoxes() {
             dispatch(setLoading(false));
         }
     };
-    //bring the box.json datas from json file
+
     useEffect(() => {
         getAllBoxes();
     }, []);
-
 
     return (
         <Container sx={{ padding: '20px', color: 'white' }}>
@@ -58,7 +64,6 @@ function ContentBoxes() {
                                 height: "20vh",
                                 borderRadius: '12px',
                                 backgroundImage: `url(${images[box.BackgroundImage]})`,
-                                //setting background picture of box
                                 backgroundSize: 'cover',
                                 textAlign: 'center',
                                 backgroundPosition: 'center',
@@ -94,6 +99,5 @@ function ContentBoxes() {
         </Container >
     );
 }
-
 
 export default ContentBoxes;
