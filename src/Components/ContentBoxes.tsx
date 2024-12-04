@@ -1,6 +1,6 @@
 import { Container, Grid, Box, Typography, Button } from '@mui/material';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import astronomyImage from '../css/Images/astronomy.jpg';
 import newsImage from '../css/Images/news.jpg';
 import photosImage from '../css/Images/photos.jpg';
@@ -8,10 +8,12 @@ import videosImage from '../css/Images/videos.jpg';
 import asteroidImage from '../css/Images/astreiod.jpg';
 import marsImage from '../css/Images/mars.jpg';
 import { useDispatch } from 'react-redux';
-import { setLoading } from '../redux/Loading';
+import { setLoading } from '../Redux/Loading';
 import { useNavigate } from 'react-router-dom';
 
 function ContentBoxes() {
+
+
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [boxes, setBoxes] = useState([]);
@@ -43,6 +45,7 @@ function ContentBoxes() {
     useEffect(() => {
         getAllBoxes();
     }, []);
+
 
     return (
         <Container sx={{ padding: '20px', color: 'white' }}>
@@ -91,5 +94,6 @@ function ContentBoxes() {
         </Container >
     );
 }
+
 
 export default ContentBoxes;

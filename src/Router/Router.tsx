@@ -1,6 +1,4 @@
-import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Layout from './Layout';
 import Index from '../Pages/Index';
 import Astronmy from '../Pages/Astronmy';
 import Planets from '../Pages/Planets';

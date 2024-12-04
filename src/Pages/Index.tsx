@@ -1,5 +1,3 @@
-
-import React from 'react';
 import Navbar from '../Components/Navbar';
 import '../Css/index.css';
 import Header from '../Components/Header';

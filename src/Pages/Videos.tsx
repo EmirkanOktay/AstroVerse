@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from '../Components/Navbar'
 import { Container } from '@mui/material'
 import Footer from '../Components/Footer'
@@ -12,7 +12,7 @@ import { CircularProgress } from '@mui/material';
 
 function Videos() {
     const dispatch = useDispatch();
-    const { data, status } = useSelector((state) => state.Video)
+    const { data, status } = useSelector((state: any) => state.Video)
 
     useEffect(() => {
         dispatch(getVideo())

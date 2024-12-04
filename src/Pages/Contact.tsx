@@ -7,7 +7,6 @@ import { Formik, Form } from "formik";
 import { validationSchema } from "../Yup/Yup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { red } from "@mui/material/colors";
 
 interface FormValues {
     name: string;
