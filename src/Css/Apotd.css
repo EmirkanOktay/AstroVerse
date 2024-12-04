@@ -1,0 +1,68 @@
+.main2 {
+    background-image: url(Images/main.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+@media (max-width: 768px) {
+    .main2 {
+        min-height: auto;
+        background-attachment: scroll;
+    }
+
+    h1,
+    h2,
+    p {
+        font-size: 16px;
+    }
+
+    .MuiContainer-root {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .explain {
+        font-size: 11px !important;
+    }
+}
+
+.slick-prev,
+.slick-next {
+    z-index: 1;
+    top: 50%;
+    padding: 10px;
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+@media (max-width: 968px) {
+    .img {
+        width: 100% !important;
+        left: 0px;
+    }
+
+    .slick-prev,
+    .slick-next {
+        display: none;
+    }
+}
+
+@media screen and (min-width : 969px) {
+    .img {
+        margin-left: 110px !important;
+    }
+
+}

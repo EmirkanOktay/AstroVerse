@@ -1,0 +1,32 @@
+.header {
+    margin-top: 30px;
+}
+
+.left-photo img {
+    width: 150%;
+    max-width: 150px;
+}
+
+.center-text {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.right-photo img {
+    width: 100%;
+    max-width: 250px;
+
+}
+
+@media (min-width: 600px) {
+    .center-text {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 900px) {
+    .center-text {
+        font-size: 3rem;
+    }
+}

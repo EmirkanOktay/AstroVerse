@@ -1,0 +1,131 @@
+.main2 {
+    background-color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+h2,
+p {
+    color: white;
+}
+
+h2,
+.head-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #ff6f61;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.contents {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.paragh {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.side-text {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.head-text {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+.contents img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+
+
+
+@media (min-width: 1200px) {
+    .contents {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .paragh {
+        font-size: 1.2rem;
+    }
+
+    .head-text {
+        font-size: 2.5rem;
+    }
+
+    img {
+        max-width: 80%;
+    }
+}
+
+@media (max-width: 1199px) {
+    .contents {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .paragh {
+        font-size: 1.1rem;
+    }
+
+    .head-text {
+        font-size: 2.2rem;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .main2 {
+        padding: 10px;
+    }
+
+    .contents {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .paragh {
+        font-size: 1rem;
+    }
+
+    .head-text {
+        font-size: 1.8rem;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    .side-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .head-text {
+        font-size: 1.5rem;
+    }
+
+    .paragh {
+        font-size: 0.9rem;
+    }
+
+    .side-text {
+        font-size: 0.9rem;
+    }
+}
