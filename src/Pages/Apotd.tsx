@@ -1,14 +1,15 @@
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import { ApotdDataGet } from '../Redux/ApotdReducer';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import Container from '@mui/material/Container';
-import { CircularProgress } from '@mui/material';
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import '../Css/Apotd.css';
 import Box from '@mui/material/Box';
+import { CircularProgress } from '@mui/material';
 
 function Apotd() {
     const dispatch = useDispatch();
@@ -33,14 +34,11 @@ function Apotd() {
             },
         ],
     };
-
     return (
         <div className='main2'>
             <Navbar />
             <Container>
-                <h1 style={{ textAlign: "center", color: "white", marginBottom: "30px" }}>
-                    Astronomy Picture Of The Day
-                </h1>
+                <h1 style={{ textAlign: "center", color: "white", marginBottom: "30px" }}>Astronomy Picture Of The Day</h1>
 
                 {status === 'loading' && (
                     <Box sx={{
@@ -59,6 +57,7 @@ function Apotd() {
                     </Box>
                 )}
 
+
                 {status === 'succeeded' && data && data.length > 0 ? (
                     <Slider {...settings}>
                         {data.slice().reverse().map((item: any, index: number) => (
@@ -66,9 +65,7 @@ function Apotd() {
                                 <p style={{ textAlign: "center", color: "white", fontSize: "20px" }}>
                                     Today's Date {item.date}
                                 </p>
-                                <h2 style={{ textAlign: "center", color: "white", marginBottom: "40px" }}>
-                                    {item.title}
-                                </h2>
+                                <h2 style={{ textAlign: "center", color: "white", marginBottom: "40px" }}>{item.title}</h2>
                                 <img className='img'
                                     src={item.url}
                                     alt={item.title}
@@ -76,6 +73,7 @@ function Apotd() {
                                         width: '100%',
                                         height: "70vh",
                                         marginBottom: "100px",
+
                                     }}
                                 />
                                 <p className='explain' style={{ textAlign: "center", color: "white", fontSize: "17px" }}>
