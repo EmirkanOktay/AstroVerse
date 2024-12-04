@@ -26,7 +26,7 @@ function ContentBoxes() {
     const [boxes, setBoxes] = useState<Box[]>([]);
     const Base_Url = "http://localhost:3000/";
 
-    const images = {
+    const images: { [key: number]: string } = {
         1: astronomyImage,
         2: newsImage,
         3: photosImage,
