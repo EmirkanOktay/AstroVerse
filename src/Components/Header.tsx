@@ -1,5 +1,4 @@
 import { Container, Typography } from '@mui/material'
-import React from 'react'
 import nasaLogo from '../Css/Images/nasaLogo.png'
 import earth from '../Css/Images/earth.png'
 import '../Css/header.css'

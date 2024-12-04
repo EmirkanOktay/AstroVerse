@@ -1,5 +1,4 @@
 import { Container, Typography, Grid } from '@mui/material';
-import React from 'react';
 import '../Css/footer.css';
 import nasaLogo from '../Css/Images/nasaLogo.png';
 import XIcon from '@mui/icons-material/X';

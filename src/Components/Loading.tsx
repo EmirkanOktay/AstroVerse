@@ -1,10 +1,8 @@
-import * as React from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function Loading() {
-    const loading = useSelector((state) => state.loading.value);
 
     return (
         <Box

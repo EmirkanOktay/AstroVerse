@@ -1,4 +1,3 @@
-import React from 'react';
 import { Container, Typography, Grid } from '@mui/material';
 import '../Css/video.css';
 
