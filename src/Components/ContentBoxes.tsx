@@ -1,5 +1,4 @@
 import { Container, Grid, Box, Typography, Button } from '@mui/material';
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import astronomyImage from '../Css/Images/astronomy.jpg';
 import newsImage from '../Css/Images/news.jpg';
@@ -7,8 +6,6 @@ import photosImage from '../Css/Images/photos.jpg';
 import videosImage from '../Css/Images/videos.jpg';
 import asteroidImage from '../Css/Images/astreiod.jpg';
 import marsImage from '../Css/Images/mars.jpg';
-import { useDispatch } from 'react-redux';
-import { setLoading } from '../Redux/Loading';
 import { useNavigate } from 'react-router-dom';
 
 interface Box {
@@ -20,11 +17,8 @@ interface Box {
 }
 
 function ContentBoxes() {
-    const dispatch = useDispatch();
     const navigate = useNavigate();
-
     const [boxes, setBoxes] = useState<Box[]>([]);
-    const Base_Url = "https://your-vercel-app.vercel.app/api/boxes";
 
     const images: { [key: number]: string } = {
         1: astronomyImage,
@@ -35,22 +29,11 @@ function ContentBoxes() {
         6: marsImage
     };
 
-    const getAllBoxes = async () => {
-        dispatch(setLoading(true));
-        try {
-            const response = await axios.get(Base_Url);
-            if (response.data) {
-                setBoxes(response.data);
-            }
-        } catch (error) {
-            console.error("Error fetching boxes:", error);
-        } finally {
-            dispatch(setLoading(false));
-        }
-    };
-
     useEffect(() => {
-        getAllBoxes();
+        const storedData = localStorage.getItem('boxesData');
+        if (storedData) {
+            setBoxes(JSON.parse(storedData));
+        }
     }, []);
 
     return (
@@ -96,7 +79,7 @@ function ContentBoxes() {
                     </Grid>
                 ))}
             </Grid>
-        </Container >
+        </Container>
     );
 }
 
