@@ -5,9 +5,13 @@ import Footer from '../Components/Footer';
 import Navbar from '../Components/Navbar';
 import { Container, CircularProgress, Box } from '@mui/material';
 import '../Css/Pom.css';
+import type { AppDispatch } from '../Redux/Store';
+
+export const useAppDispatch = () => useDispatch<AppDispatch>();
+
 
 function Pom() {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { data, status } = useSelector((state: any) => state.Mars);
 
     const itemsPerPage = 5;

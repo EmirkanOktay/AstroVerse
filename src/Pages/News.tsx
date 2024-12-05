@@ -6,11 +6,13 @@ import { NewsDataGet } from '../Redux/News.Reducer';
 import { Container, Grid, Box } from '@mui/material';
 import { CircularProgress } from '@mui/material';
 import '../Css/News.css';
+import type { AppDispatch } from '../Redux/Store';
+
+export const useAppDispatch = () => useDispatch<AppDispatch>();
 
 function News() {
     const { data, status } = useSelector((state: any) => state.News);
-    const dispatch = useDispatch();
-
+    const dispatch = useAppDispatch();
     useEffect(() => {
         dispatch(NewsDataGet());
     }, [dispatch]);

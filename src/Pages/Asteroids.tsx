@@ -6,9 +6,11 @@ import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import { Box } from '@mui/joy';
 import { CircularProgress } from '@mui/material';
+import type { AppDispatch } from '../Redux/Store';
+export const useAppDispatch = () => useDispatch<AppDispatch>();
 
 function Asteroids() {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { data, status } = useSelector((state: any) => state.Astreiod);
 
     useEffect(() => {

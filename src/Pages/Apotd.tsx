@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ApotdDataGet } from '../Redux/ApotdReducer';
 import Navbar from '../Components/Navbar';
@@ -10,9 +10,13 @@ import Slider from "react-slick";
 import '../Css/Apotd.css';
 import Box from '@mui/material/Box';
 import { CircularProgress } from '@mui/material';
+import type { AppDispatch } from '../Redux/Store';
+
+export const useAppDispatch = () => useDispatch<AppDispatch>();
 
 function Apotd() {
-    const dispatch = useDispatch();
+
+    const dispatch = useAppDispatch();
     const { data, status } = useSelector((state: any) => state.Apotd);
 
     useEffect(() => {
