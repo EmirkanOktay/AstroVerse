@@ -1,12 +1,12 @@
 import { Container, Grid, Box, Typography, Button } from '@mui/material';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import astronomyImage from '../css/Images/astronomy.jpg';
-import newsImage from '../css/Images/news.jpg';
-import photosImage from '../css/Images/photos.jpg';
-import videosImage from '../css/Images/videos.jpg';
-import asteroidImage from '../css/Images/astreiod.jpg';
-import marsImage from '../css/Images/mars.jpg';
+import astronomyImage from '../Css/Images/astronomy.jpg';
+import newsImage from '../Css/Images/news.jpg';
+import photosImage from '../Css/Images/photos.jpg';
+import videosImage from '../Css/Images/videos.jpg';
+import asteroidImage from '../Css/Images/astreiod.jpg';
+import marsImage from '../Css/Images/mars.jpg';
 import { useDispatch } from 'react-redux';
 import { setLoading } from '../Redux/Loading';
 import { useNavigate } from 'react-router-dom';
