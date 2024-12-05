@@ -6,12 +6,15 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getVideo } from '../Redux/PhotoAndVideoReducer'
 import { paginateData } from './Images'
 import '../Css/Images.css'
-import { Grid } from '@mui/joy'
+import { Grid } from '@mui/material';
 import Box from '@mui/material/Box';
 import { CircularProgress } from '@mui/material';
+import type { AppDispatch } from '../Redux/Store';
+export const useAppDispatch = () => useDispatch<AppDispatch>();
+
 
 function Videos() {
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { data, status } = useSelector((state: any) => state.Video)
 
     useEffect(() => {

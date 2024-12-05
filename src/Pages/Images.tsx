@@ -4,10 +4,13 @@ import { Container } from '@mui/material'
 import Footer from '../Components/Footer'
 import { useDispatch, useSelector } from 'react-redux'
 import { getImage } from '../Redux/PhotoAndVideoReducer'
-import { Grid } from '@mui/joy'
+import { Grid } from '@mui/material';
 import Box from '@mui/material/Box';
 import { CircularProgress } from '@mui/material';
 import '../Css/Images.css'
+import type { AppDispatch } from '../Redux/Store';
+
+export const useAppDispatch = () => useDispatch<AppDispatch>();
 
 export const paginateData = (items: any[], itemsPerPage: number): any[][] => {
     const pages: any[][] = [];
@@ -25,7 +28,7 @@ export const paginateData = (items: any[], itemsPerPage: number): any[][] => {
 };
 function Images() {
 
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
     const { data, status } = useSelector((state: any) => state.Image);
 
     useEffect(() => {
