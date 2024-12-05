@@ -24,7 +24,7 @@ function ContentBoxes() {
     const navigate = useNavigate();
 
     const [boxes, setBoxes] = useState<Box[]>([]);
-    const Base_Url = "http://localhost:3000/";
+    const Base_Url = "https://your-vercel-app.vercel.app/api/boxes";
 
     const images: { [key: number]: string } = {
         1: astronomyImage,
@@ -38,8 +38,8 @@ function ContentBoxes() {
     const getAllBoxes = async () => {
         dispatch(setLoading(true));
         try {
-            const response = await axios.get(`${Base_Url}boxes`);
-            if (response) {
+            const response = await axios.get(Base_Url);
+            if (response.data) {
                 setBoxes(response.data);
             }
         } catch (error) {
